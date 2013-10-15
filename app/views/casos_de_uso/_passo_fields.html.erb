@@ -1,0 +1,9 @@
+<fieldset>
+	<div class="controls controls-row">
+		<%= f.input :nome, :label => false, :placeholder => "Nome", :wrapper => :none, :input_html => { :class => "span4" } %>
+
+		<%= f.hidden_field :_destroy %>
+		<%= link_to icon_tag('icon-remove'), '#', class: "remove_multiple_level_nested_fields btn" %>
+	</div>
+	<br>
+</fieldset>

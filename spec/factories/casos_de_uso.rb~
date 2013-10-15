@@ -1,0 +1,8 @@
+# Read about factories at https://github.com/thoughtbot/factory_girl
+
+FactoryGirl.define do
+  factory :caso_de_uso do
+    nome "MyString"
+    projeto_id 1
+  end
+end

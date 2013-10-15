@@ -1,0 +1,57 @@
+# encoding: UTF-8
+# pt-BR translations for Ruby on Rails
+"pt-BR":
+  # formatos de data e hora
+  attributes:
+    name: Nome
+    description: Descrição
+    document: Documento
+    comments: Comentários
+    comment: Comentário
+    created_at: "Criado em"
+    updated_at: "Atualizado em"
+    folder: Pasta
+    role: Grupo
+    roles: Grupos
+
+    codigo: Código
+    descricao: Descrição
+    situacao: Situação
+
+  activerecord:
+    submit:
+      classificacao_icms:
+        create: "Criar classificação ICMS"
+        update: "Atualizar classificação ICMS"
+
+    models:
+      user: Usuário
+      classificacao_fiscal: "Classificação fiscal"
+      situacao_tributaria_icms: "Situação tributária"
+      classificacao_icms: "Classificação ICMS"
+      natureza_operacao: "Natureza operação"
+      pais: País
+      micro_regiao: "Micro Região"
+      regiao: Região
+      forma_pagamento: "Forma de pagamento"
+      forma_pagamento_titulo: "Forma de pagamento de título"
+      tabela_preco: "Tabela preço"
+      tabela_preco_item: "Tabela item"
+      cotacao: Cotação
+      faixa_credito: "Faixa crédito"
+      tipo_consulta_credito: "Tipo consulta crédito"
+      tipo_titulo: "Tipo título"
+      operacao_titulo: "Operação título"
+      portador_ocorrencia_retorno: "Portador ocorrência retorno"
+      titulo: Título
+      titulo_movimento: "Título movimento"
+      autorizacao_pagamento: "Autorização pagamento"
+
+    attributes:
+      abreviacao:
+        abreviacao: Abreviação
+      projeto:
+        ind_ativo: Status
+        human_situacao_name: Situação
+        data_emissao: "Data emissão"
+        modelo_contabil: "Modelo contábil"

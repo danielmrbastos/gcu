@@ -1,0 +1,11 @@
+<h1><%%= @<%= singular_name %> %></h1>
+<%%= show_for @<%= singular_name %> do |s| %>
+<% attributes.each do |attribute| -%>
+  <%%= s.<%= attribute.reference? ? :association : :attribute %> :<%= attribute.name %> %>
+<% end %>
+<%% end %>
+<div class="form-actions">
+	<%%= link_to 'Editar', edit_<%= singular_name %>_path(@<%= singular_table_name %>), :class => 'btn' %>
+	<%%= link_to 'Novo', new_<%= singular_name %>_path, :class => 'btn' %>
+	<%%= link_to 'Ver lista', <%= plural_name %>_path, :class => 'btn' %>
+</div>

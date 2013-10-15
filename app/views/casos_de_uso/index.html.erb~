@@ -1,0 +1,25 @@
+<h1>Casos de uso</h1>
+<table class="table table-striped">
+  <thead>
+	  <tr>
+		  <th>Nome</th>
+	    <th>Projeto</th>
+		  <th>Ações</th>
+	 	</tr>
+  </thead>
+  <tbody>
+<% @casos_de_uso.each do |caso_de_uso| %>
+  	<tr>
+    	<td><%= link_to caso_de_uso.nome, caso_de_uso %></td>
+    	<td><%= link_to caso_de_uso.projeto, projeto(caso_de_uso.projeto) %></td>
+
+    	<td>
+      	<%= link_to icon_tag('icon-pencil'), edit_caso_de_uso_path(caso_de_uso), :title => 'Editar', :class => 'btn with-tip' %>
+      	<%= link_to icon_tag('icon-remove'), caso_de_uso, confirm: 'Você tem certeza?', method: :delete, :title => 'Excluir', :class => 'btn with-tip' %>
+    	</td>
+  	</tr>
+<% end %>
+  </tbody>
+</table>
+<%= paginate @casos_de_uso %>
+<%= link_to icon_tag('icon-plus') + ' Novo caso', new_caso_de_uso_path, :class => 'btn btn-primary' %>

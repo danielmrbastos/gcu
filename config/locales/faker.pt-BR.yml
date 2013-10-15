@@ -1,0 +1,41 @@
+pt-br:
+  faker:
+    address:
+      city_prefix: [São, Nova, Velha, Grande, Vila, Município de, Capitão, Coronel, Monte, Rio, Barão, Campo, Arroio, Vale do ]
+      city_suffix: [pólis, lândia, ville, " Verde", " Azul", " Vermelho", " Grande", " Largo", " do Descoberto", " de Nossa Senhora", " do Norte",
+                    " do Sul", " do Oeste", " do Leste", " de Santana", " das Matas", " do Bomfim", " da Serra", " da Boa Vista"]
+      street_prefix: [Rua, Rua, Rua, Rua, Rua, Avenida, Avenida, Praça]
+      name_prefix: [Marechal, General, Coronel, Capitão, Tenente, Desembargador, Presidente, Padre, Bispo, Deputado, Senador]
+      building_number: ["####", "###", "###"]
+      neighborhood_prefix: [Vila, Jardim, Parque, Conjunto]
+      neighborhood_name:
+        - "#{neighborhood_prefix} #{Name.first_name_man}"
+        - "#{neighborhood_prefix} #{Name.first_name_woman}"
+      # Though these are US-specific, they are here (in the default locale) for backwards compatibility
+      postcode: ['#####-###']
+      street_name:
+        - "#{street_prefix} #{Name.name}"
+        - "#{street_prefix} #{Name.name}"
+        - "#{street_prefix} #{name_prefix} #{Name.name}"
+      street_address:
+        - "#{street_name}, #{building_number}"
+
+    name:
+      first_name_man: ["Alessandro", "Alexandre", "Antônio", "Breno", "Carlos", "César", "Danilo", "Deneval", "Eduardo", "Elísio", "Fábio", "Fabrício", "Félix", "Feliciano", "Frederico", "Fabiano", "Gustavo", "Guilherme", "Gúbio", "Heitor", "Hélio", "Hugo", "Igor", "João", "Júlio César", "Júlio", "Janaína", "Kléber", "Lucas", "Lorraine", "Ladislau", "Marcos", "Marcelo", "Norberto", "Nataniel", "Paulo", "Pablo", "Pedro", "Raul", "Rafael", "Ricardo", "Roberto", "Silas", "Salvador", "Sirineu", "Tertuliano", "Vicente", "Víctor", "Yango", "Yago", "Yuri", "Washington", "Warley"]
+      first_name_woman: ["Alessandra", "Aline", "Bruna", "Carla", "Célia", "Cecília", "Dalila", "Eduarda", "Esther", "Fabrícia", "Felícia", "Isabel", "Isabela", "Joana", "Júlia", "Janaína", "Karla", "Kléber", "Lorena", "Larissa", "Meire", "Marcela", "Margarida", "Mércia", "Márcia", "Marli", "Morgana", "Maria", "Natália", "Núbia", "Ofélia", "Paula", "Roberta", "Sílvia", "Suélen", "Sara", "Talita", "Tânia", "Vitória"]
+
+      name:
+        - "#{first_name_man} #{last_name}"
+        - "#{first_name_man} #{last_name}"
+        - "#{first_name_man} #{first_name_man} #{last_name}"
+        - "#{first_name_man} #{last_name} #{last_name}"
+
+      name_woman:
+        - "#{first_name_woman} #{last_name}"
+        - "#{first_name_woman} #{last_name}"
+        - "#{first_name_woman} #{first_name_woman} #{last_name}"
+        - "#{first_name_woman} #{last_name} #{last_name}"
+
+    phone_number:
+      formats: ["(##) ####-####"]
+

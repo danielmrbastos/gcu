@@ -1,0 +1,24 @@
+<h1>Projetos</h1>
+<table class="table table-striped">
+  <thead>
+	  <tr>
+	    <th>Nome</th>
+	    <th>Status</th>
+	    <th>Ações</th>
+	 	</tr>
+  </thead>
+  <tbody>
+<% @projetos.each do |projeto| %>
+  	<tr>
+    	<td><%= link_to projeto.nome, projeto %></td>
+    	<td><%= projeto.ind_ativo == true ?  "Ativo" : "Inativo" %></td>
+    	<td>
+      	<%= link_to icon_tag('icon-pencil'), edit_projeto_path(projeto), :title => 'Editar', :class => 'with-tip btn' %>
+      	<%= link_to icon_tag('icon-remove'), projeto, confirm: 'Você tem certeza?', method: :delete, :title => 'Excluir', :class => 'with-tip btn' %>
+    	</td>
+  	</tr>
+<% end %>
+  </tbody>
+</table>
+<%= paginate @projetos %>
+<%= link_to icon_tag('icon-plus') + ' Novo projeto', new_projeto_path, :class => 'btn btn-primary' %>

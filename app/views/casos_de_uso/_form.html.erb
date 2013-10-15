@@ -1,0 +1,23 @@
+<%= simple_form_for @caso_de_uso, :html => {:class => "form-horizontal"} do |f| %>
+  <fieldset>
+		<legend><%= title %></legend>
+		<%= error_messages @caso_de_uso, true %>
+		<%= f.association :projeto %>
+    <%= f.input :nome, :input_html => { :class => "span6"} %>
+
+
+	 	<h3>Fluxos</h3>
+	 	<div class="row">
+		 	<%= f.simple_fields_for :fluxos do |builder| %>
+				<%= render 'fluxo_fields', f: builder %>
+			<% end %>
+			<%= new_multiple_level_child_fields "Incluir fluxo", f, :fluxos %>
+	 	</div>
+
+
+		<div class="form-actions">
+	 		<%= f.button :submit, 'Salvar', :class => 'btn-primary' %>
+			<%= link_to 'Cancelar', casos_de_uso_path, :class => 'btn' %>
+		</div>
+  </fieldset>
+<% end %>

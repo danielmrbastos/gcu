@@ -1,0 +1,34 @@
+<h1>passos</h1>
+<table class="table table-striped">
+  <thead>
+	  <tr>
+		  
+	    <th>Nome</th>
+		  
+	    <th>Fluxo</th>
+		  
+	    <th>Ações</th>
+	 	</tr>
+  </thead>
+  <tbody>
+<% @passos.each do |passo| %>
+  	<tr>
+
+  
+    	<td><%= link_to passo.nome, passo %></td>
+  
+
+  
+    	<td><%= passo.fluxo_id %></td>
+  
+
+    	<td>
+      	<%= link_to icon_tag('iconx-pencil'), edit_passo_path(passo), :title => 'Editar', :class => 'with-tip' %>
+      	<%= link_to icon_tag('iconx-remove'), passo, confirm: 'Você tem certeza?', method: :delete, :title => 'Excluir', :class => 'with-tip' %>
+    	</td>
+  	</tr>
+<% end %>
+  </tbody>
+</table>
+<%= paginate @passos %>
+<%= link_to icon_tag('icon-plus') + ' Nova passo', new_passo_path, :class => 'btn btn-primary' %>

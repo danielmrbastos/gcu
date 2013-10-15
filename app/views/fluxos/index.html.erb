@@ -1,0 +1,34 @@
+<h1>fluxos</h1>
+<table class="table table-striped">
+  <thead>
+	  <tr>
+		  
+	    <th>Nome</th>
+		  
+	    <th>Caso de uso</th>
+		  
+	    <th>Ações</th>
+	 	</tr>
+  </thead>
+  <tbody>
+<% @fluxos.each do |fluxo| %>
+  	<tr>
+
+  
+    	<td><%= link_to fluxo.nome, fluxo %></td>
+  
+
+  
+    	<td><%= fluxo.caso_de_uso_id %></td>
+  
+
+    	<td>
+      	<%= link_to icon_tag('iconx-pencil'), edit_fluxo_path(fluxo), :title => 'Editar', :class => 'with-tip' %>
+      	<%= link_to icon_tag('iconx-remove'), fluxo, confirm: 'Você tem certeza?', method: :delete, :title => 'Excluir', :class => 'with-tip' %>
+    	</td>
+  	</tr>
+<% end %>
+  </tbody>
+</table>
+<%= paginate @fluxos %>
+<%= link_to icon_tag('icon-plus') + ' Nova fluxo', new_fluxo_path, :class => 'btn btn-primary' %>

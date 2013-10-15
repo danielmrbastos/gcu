@@ -1,0 +1,14 @@
+<fieldset>
+	<div class="span9 well">
+		<%= f.input :nome, :wrapper => :append do %>
+			<%= f.input_field :nome, :class => "span4" %><%= f.hidden_field :_destroy %><%= link_to icon_tag("icon-remove") + " Excluir fluxo", '#', class: "remove_multiple_level_nested_fields btn add-on" %>
+		<% end %>
+		<hr>
+		<h4>Passos</h4>
+		<%= f.simple_fields_for :passos do |builder| %>
+			<%= render 'passo_fields', f: builder %>
+		<% end %>
+
+		<%= new_multiple_level_child_fields "Incluir Passo", f, :passos %>
+	</div>
+</fieldset>

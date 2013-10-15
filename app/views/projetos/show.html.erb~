@@ -1,0 +1,11 @@
+<h1><%= @projeto %></h1>
+<%= show_for @projeto do |s| %>
+  <%= s.attribute :nome %>
+  <%= s.attribute :ind_ativo %>
+
+<% end %>
+<div class="form-actions">
+	<%= link_to 'Editar', edit_projeto_path(@projeto), :class => 'btn' %>
+	<%= link_to 'Novo', new_projeto_path, :class => 'btn' %>
+	<%= link_to 'Ver lista', projetos_path, :class => 'btn' %>
+</div>

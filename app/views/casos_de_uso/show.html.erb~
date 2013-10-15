@@ -1,0 +1,30 @@
+<h1><%= @caso_de_uso %></h1>
+<%= show_for @caso_de_uso do |s| %>
+	<%= s.association :projeto %>
+	<%= s.attribute :nome %>
+<% end %>
+	<h3>Fluxos</h3>
+<table class="table table-hover">
+<% if @caso_de_uso.fluxos.count > 0 %>
+	<% @caso_de_uso.fluxos.each do |fluxo| %>
+		<tr>
+			<td>
+				<ol>
+					<b><%= fluxo.nome %></b>
+					<% if fluxo.passos.count > 0 %>
+						<% fluxo.passos.each do |passo| %>
+							<li><%= passo.nome %></li>
+						<% end %>
+					<% end %>
+				</ol>
+			</td>
+		</tr>
+	<% end %>
+<% end %>
+</table>
+
+<div class="form-actions">
+	<%= link_to 'Editar', edit_caso_de_uso_path(@caso_de_uso), :class => 'btn' %>
+	<%= link_to 'Novo', new_caso_de_uso_path, :class => 'btn' %>
+	<%= link_to 'Ver lista', casos_de_uso_path, :class => 'btn' %>
+</div>

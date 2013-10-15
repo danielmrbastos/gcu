@@ -1,0 +1,10 @@
+# Read about factories at https://github.com/thoughtbot/factory_girl
+
+FactoryGirl.define do
+  factory :passo do
+    nome "MyString"
+    fluxo_id 1
+		sequence(:nome) { |n| "Passo #{n}" }
+		association :fluxo
+  end
+end

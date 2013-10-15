@@ -1,0 +1,24 @@
+<h1>Atores</h1>
+<table class="table table-striped">
+  <thead>
+	  <tr>
+		  <th>Nome</th>
+		  <th>Projeto</th>
+		  <th>Ações</th>
+	 	</tr>
+  </thead>
+  <tbody>
+<% @atores.each do |ator| %>
+  	<tr>
+    	<td><%= link_to ator.nome, ator %></td>
+    	<td><%= ator.projeto %></td>
+    	<td>
+      	<%= link_to icon_tag('icon-pencil'), edit_ator_path(ator), :title => 'Editar', :class => 'btn with-tip' %>
+      	<%= link_to icon_tag('icon-remove'), ator, confirm: 'Você tem certeza?', method: :delete, :title => 'Excluir', :class => 'btn with-tip' %>
+    	</td>
+  	</tr>
+<% end %>
+  </tbody>
+</table>
+<%= paginate @atores %>
+<%= link_to icon_tag('icon-plus') + 'Novo ator', new_ator_path, :class => 'btn btn-primary' %>
