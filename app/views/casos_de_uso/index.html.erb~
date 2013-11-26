@@ -4,6 +4,7 @@
 	  <tr>
 		  <th>Nome</th>
 	    <th>Projeto</th>
+			<th>Situação</td>
 		  <th>Ações</th>
 	 	</tr>
   </thead>
@@ -11,11 +12,14 @@
 <% @casos_de_uso.each do |caso_de_uso| %>
   	<tr>
     	<td><%= link_to caso_de_uso.nome, caso_de_uso %></td>
-    	<td><%= link_to caso_de_uso.projeto, projeto(caso_de_uso.projeto) %></td>
-
+    	<td><%= link_to caso_de_uso.projeto, projeto_path(caso_de_uso.projeto) %></td>
+			<td><%= caso_de_uso.human_situacao_name %></td>
     	<td>
-      	<%= link_to icon_tag('icon-pencil'), edit_caso_de_uso_path(caso_de_uso), :title => 'Editar', :class => 'btn with-tip' %>
-      	<%= link_to icon_tag('icon-remove'), caso_de_uso, confirm: 'Você tem certeza?', method: :delete, :title => 'Excluir', :class => 'btn with-tip' %>
+      	<%= link_to icon_tag('icon-pencil'), edit_caso_de_uso_path(caso_de_uso), :title => 'Editar', :class => 'btn with-tip' unless caso_de_uso.situacao == "aprovado"%>
+      	<%= link_to icon_tag('icon-refresh'), caso_de_uso_aprova_caso_path(caso_de_uso), confirm: 'Você tem certeza?', :title => 'Aprovar', :class => 'btn with-tip' %>
+    	<%= link_to icon_tag('icon-remove'), caso_de_uso, confirm: 'Você tem certeza?', method: :delete, :title => 'Excluir', :class => 'btn with-tip' %>
+
+
     	</td>
   	</tr>
 <% end %>

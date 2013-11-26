@@ -34,7 +34,7 @@ namespace :db do
 		@projeto_erp = Projeto.find_by_nome('Sistema ERP')
 
 		aux = 1;
-		rand(1..5).times do
+		rand(3..5).times do
 			@caso = FactoryGirl.create(:caso_de_uso, :projeto => @projeto_erp, :nome => "UC00#{aux} - Caso exemplo")
 			rand(1..3).times do
 

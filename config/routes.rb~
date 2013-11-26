@@ -10,7 +10,7 @@ Gcu::Application.routes.draw do
 
 
   resources :casos_de_uso do
-		get :aprova_caso
+		put :aprova_caso
 	end
 
 

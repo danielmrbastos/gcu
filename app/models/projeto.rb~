@@ -9,5 +9,17 @@ class Projeto < ActiveRecord::Base
 	end
 
 
+	 state_machine :situacao, :initial => :ativo do
+     state :ativo do
+       transition :to => :inativo, :on => :inativar
+     end
+     state :inativo do
+       transition :to => :ativo, :on => :ativar
+     end
+     state :ativo, :human_name => 'Ativo'
+     state :inativo, :human_name => 'Inativo'
+
+     after_transition :do => :exec_after_transition
+  end
 
 end

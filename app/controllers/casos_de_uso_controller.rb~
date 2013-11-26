@@ -37,6 +37,15 @@ class CasosDeUsoController < ApplicationController
     end
   end
 
+	def aprova_caso
+		@caso_de_uso = CasoDeUso.find(params[:caso_de_uso_id])
+
+		if @caso_de_uso.aprovar
+			render :action => "index"
+		end
+
+	end
+
   def destroy
     @caso_de_uso = CasoDeUso.find(params[:id])
     @caso_de_uso.destroy

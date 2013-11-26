@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(:version => 20131010041156) do
   create_table "casos_de_uso", :force => true do |t|
     t.string   "nome"
     t.integer  "projeto_id"
+    t.string   "situacao",   :null => false
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

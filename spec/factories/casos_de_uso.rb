@@ -2,6 +2,10 @@
 
 FactoryGirl.define do
   factory :caso_de_uso do
+
+		#  after(:build) do |caso_de_uso|
+  	#   caso_de_uso.initialize_state
+    #end
 		sequence(:nome) { |n| "Caso de uso #{n}" }
 		association :projeto
   end

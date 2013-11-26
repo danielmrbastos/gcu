@@ -33,7 +33,6 @@ group :test do
 	gem "spork"
   gem "shoulda-matchers"
 end
-end
 
 gem "therubyracer"
 gem "less-rails"
