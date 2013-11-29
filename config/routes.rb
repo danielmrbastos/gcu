@@ -11,6 +11,8 @@ Gcu::Application.routes.draw do
 
   resources :casos_de_uso do
 		get :aprova_caso
+		get :mostra_atores
+		put :associar_ator
 	end
 
 

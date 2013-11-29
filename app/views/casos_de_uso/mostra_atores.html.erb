@@ -1,0 +1,8 @@
+<h3><%= @caso_de_uso %> - Seleção de atores</h3>
+
+<%= simple_form_for(@caso_de_uso, :url => "associar_ator") do |f| %>
+	<%= f.input :ator, :as => :check_boxes, input_html: {checked: false}, collection: @atores_do_projeto, label: false  %>
+
+	<%= f.button :submit, 'Associar', :class => 'btn-primary' %>
+	<%= link_to 'Voltar', caso_de_uso_path(@caso_de_uso), :class => 'btn' %>
+<% end %>

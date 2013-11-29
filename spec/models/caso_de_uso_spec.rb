@@ -9,6 +9,8 @@ describe CasoDeUso do
 
 	it { should validate_presence_of :nome }
   it { should validate_uniqueness_of(:nome).scoped_to(:projeto_id) }
+	it { should validate_presence_of :precondicao }
+	it { should validate_presence_of :poscondicao }
 
 	it "estado inicial do objeto deve ser em analise" do
 		@caso_de_uso.situacao.should_not be_empty

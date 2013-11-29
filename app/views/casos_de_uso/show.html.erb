@@ -1,8 +1,25 @@
-<h1><%= @caso_de_uso %></h1>
+<h1>Atores do projeto</h1>
 <%= show_for @caso_de_uso do |s| %>
 	<%= s.association :projeto %>
 	<%= s.attribute :nome %>
+	<%= s.attribute :precondicao %>
+	<%= s.attribute :poscondicao %>
+
 <% end %>
+
+<h3>Atores</h3>
+<table class="table table-hover">
+<% if @caso_de_uso.fluxos.count > 0 %>
+	<% @caso_de_uso.atores_do_caso.each do |assoc_ator| %>
+		<tr>
+			<td>
+					<b><%= Ator.find_by_id(assoc_ator.ator_id).nome %></b>
+			</td>
+		</tr>
+	<% end %>
+<% end %>
+</table>
+
 <h3>Fluxos</h3>
 <table class="table table-hover">
 <% if @caso_de_uso.fluxos.count > 0 %>
@@ -24,7 +41,8 @@
 </table>
 
 <div class="form-actions">
-	<%= link_to 'Editar', edit_caso_de_uso_path(@caso_de_uso), :class => 'btn' %>
+	<%= link_to 'Editar', edit_caso_de_uso_path(@caso_de_uso), :class => 'btn' unless @caso_de_uso.situacao == "aprovado" %>
 	<%= link_to 'Novo', new_caso_de_uso_path, :class => 'btn' %>
+	<%= link_to 'Associar Atores', caso_de_uso_mostra_atores_path(@caso_de_uso), :class => 'btn' unless @caso_de_uso.situacao == "aprovado" %>
 	<%= link_to 'Ver lista', casos_de_uso_path, :class => 'btn' %>
 </div>

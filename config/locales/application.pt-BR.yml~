@@ -51,7 +51,9 @@
       abreviacao:
         abreviacao: Abreviação
       projeto:
-        ind_ativo: Número
+        ind_ativo: Status
         human_situacao_name: Situação
         data_emissao: "Data emissão"
         modelo_contabil: "Modelo contábil"
+      caso_de_uso:
+        precondicao: "Pré-condições"

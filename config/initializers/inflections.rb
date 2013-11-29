@@ -71,7 +71,9 @@ ActiveSupport::Inflector.inflections do |inflect|
 			'fluxo' => 'fluxos',
 			'Fluxo' => 'Fluxos',
 			'passo' => 'passos',
-			'Passo' => 'Passos'
+			'Passo' => 'Passos',
+			'caso_de_uso_ator' => 'casos_de_uso_ator',
+			'CasoDeUsoAtor' => 'CasosDeUsoAtor'
     }
 
     irregulares.each do |key, value|

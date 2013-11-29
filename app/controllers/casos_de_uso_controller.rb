@@ -46,9 +46,22 @@ class CasosDeUsoController < ApplicationController
 
 	end
 
+	def mostra_atores
+		@caso_de_uso = CasoDeUso.find(params[:caso_de_uso_id])
+		@atores_do_projeto = Ator.where(:projeto_id => @caso_de_uso.projeto)
+	end
+
+	def associar_ator
+		@caso_de_uso = CasoDeUso.find(params[:caso_de_uso_id])
+		@caso_de_uso.associa_atores(params[:caso_de_uso][:ator])
+
+		redirect_to(caso_de_uso_path(@caso_de_uso))
+	end
+
   def destroy
     @caso_de_uso = CasoDeUso.find(params[:id])
     @caso_de_uso.destroy
     redirect_to(casos_de_uso_url)
   end
+
 end

@@ -230,6 +230,10 @@
       item: Item
       auction_type: "Tipo de Leilão"
 
+		caso_de_uso:
+			precondicao: "Pré-condições"
+			poscondicao: "Pós-condições"
+
     attributes:
       document:
         checked_out_by_user: "Reservado para edição pelo usuário"

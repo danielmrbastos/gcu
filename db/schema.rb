@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131010041156) do
+ActiveRecord::Schema.define(:version => 20131128232458) do
 
   create_table "atores", :force => true do |t|
     t.string   "nome"
@@ -22,10 +22,19 @@ ActiveRecord::Schema.define(:version => 20131010041156) do
 
   create_table "casos_de_uso", :force => true do |t|
     t.string   "nome"
+    t.string   "precondicao"
+    t.string   "poscondicao"
     t.integer  "projeto_id"
-    t.string   "situacao",   :null => false
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "situacao",    :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "casos_de_uso_ator", :force => true do |t|
+    t.integer  "caso_de_uso_id"
+    t.integer  "ator_id"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "fluxos", :force => true do |t|

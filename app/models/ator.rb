@@ -5,6 +5,7 @@ class Ator < ActiveRecord::Base
 	validates_presence_of :nome
 	validates_uniqueness_of :nome, :scope => :projeto_id
 
+
 	def to_s
 		nome
 	end

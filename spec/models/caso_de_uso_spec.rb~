@@ -20,5 +20,4 @@ describe CasoDeUso do
 		@caso_de_uso.situacao.should == "aprovado"
 	end
 
-
 end

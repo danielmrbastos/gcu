@@ -35,7 +35,7 @@ namespace :db do
 
 		aux = 1;
 		rand(3..5).times do
-			@caso = FactoryGirl.create(:caso_de_uso, :projeto => @projeto_erp, :nome => "UC00#{aux} - Caso exemplo")
+			@caso = FactoryGirl.create(:caso_de_uso, :projeto => @projeto_erp, :nome => "UC00#{aux} - Caso exemplo", :precondicao => "Estar autenticado", :poscondicao => "Poscondicao 1")
 			rand(1..3).times do
 
 				@fluxo = FactoryGirl.create(:fluxo, :caso_de_uso => @caso)

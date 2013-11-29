@@ -1,16 +1,29 @@
 class CasoDeUso < ActiveRecord::Base
-  attr_accessible :nome, :projeto_id, :fluxos_attributes, :passos_attributes, :situacao
+  attr_accessible :nome, :projeto_id, :fluxos_attributes, :passos_attributes, :situacao, :precondicao, :poscondicao
 
 	belongs_to :projeto
 	has_many :fluxos
 
 	accepts_nested_attributes_for :fluxos, :allow_destroy => true
 
-	validates_presence_of :nome
+	validates_presence_of :nome, :precondicao, :poscondicao
+
 	validates_uniqueness_of :nome, :scope => :projeto_id
 
 	def to_s
 		nome
+	end
+
+	def associa_atores(array_ator)
+		array_ator.each do |atorid|
+			if atorid != ""
+				CasoDeUsoAtor.create(:caso_de_uso => self, :ator_id => atorid)
+			end
+		end
+	end
+
+	def atores_do_caso
+		CasoDeUsoAtor.where(:caso_de_uso => self)
 	end
 
 	state_machine :situacao, :initial => :analise do
@@ -21,20 +34,7 @@ class CasoDeUso < ActiveRecord::Base
 
      state :analise, :human_name => 'Em analise'
      state :aprovado, :human_name => 'Aprovado'
-
-    # after_transition :do => :exec_after_transition
   end
 
-	def exec_after_transition(transition)
-	#	puts "Iniciando after - #{transition}"
-	#	puts "============================="
-	#	puts transition.class
-	#	puts "transition -#{transition}"
-	#	puts "============================="
-
-	#	self.situacao = transition
-
-	#	self.save!
-  end
 
 end
