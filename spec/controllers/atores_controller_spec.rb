@@ -6,6 +6,7 @@ describe AtoresController, "as admin" do
 
   before do
     @ator = FactoryGirl.create(:ator)
+		@tipo_ator = FactoryGirl.create(:tipo_ator)
   end
 
   describe "GET to index" do
@@ -46,7 +47,7 @@ describe AtoresController, "as admin" do
 
   describe "POST to create" do
     context "with sucessful save" do
-      before { post :create, :ator => FactoryGirl.attributes_for(:ator) }
+      before { post :create, :ator => FactoryGirl.attributes_for(:ator, :tipo_ator_id => @tipo_ator.id, :projeto_id => @ator.projeto.id) }
 
       it { assigns[:ator].should_not be_nil }
       it { flash[:notice].should match('criado') }

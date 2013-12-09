@@ -4,7 +4,7 @@ class CreateProjetos < ActiveRecord::Migration
       t.string :nome
       t.boolean :ind_ativo
 			t.decimal :fator_tecnico
-			t.decimal :fator_ambiental
+			t.decimal :fator_ambiental, :precision => 2, :scale => 3
 
       t.timestamps
     end

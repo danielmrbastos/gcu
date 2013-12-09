@@ -19,7 +19,9 @@ Gcu::Application.routes.draw do
   resources :atores
 
 
-  resources :projetos
+  resources :projetos do
+		get :gerar_estimativa
+	end
 
 
   # The priority is based upon order of creation:

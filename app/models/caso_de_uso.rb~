@@ -1,5 +1,5 @@
 class CasoDeUso < ActiveRecord::Base
-  attr_accessible :nome, :projeto_id, :fluxos_attributes, :passos_attributes, :situacao, :precondicao, :poscondicao
+  attr_accessible :nome, :projeto_id, :fluxos_attributes, :passos_attributes, :situacao, :precondicao, :poscondicao, :fator_tecnico, :fator_ambiental
 
 	belongs_to :projeto
 	has_many :fluxos
@@ -23,7 +23,7 @@ class CasoDeUso < ActiveRecord::Base
 	end
 
 	def atores_do_caso
-		CasoDeUsoAtor.where(:caso_de_uso => self)
+		CasoDeUsoAtor.where(:caso_de_uso_id => self)
 	end
 
 	state_machine :situacao, :initial => :analise do
@@ -35,6 +35,12 @@ class CasoDeUso < ActiveRecord::Base
      state :analise, :human_name => 'Em analise'
      state :aprovado, :human_name => 'Aprovado'
   end
+
+	def gerar_estimativa
+
+	end
+
+
 
 
 end

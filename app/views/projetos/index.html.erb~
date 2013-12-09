@@ -3,7 +3,7 @@
   <thead>
 	  <tr>
 	    <th>Nome</th>
-	    <th>Ativo</th>
+	    <th>Status</th>
 	    <th>Ações</th>
 	 	</tr>
   </thead>
@@ -13,6 +13,7 @@
     	<td><%= link_to projeto.nome, projeto %></td>
     	<td><%= projeto.ind_ativo == true ?  "Ativo" : "Inativo" %></td>
     	<td>
+	     	<%= link_to icon_tag(' icon-star-empty'), projeto_gerar_estimativa_path(projeto), :title => 'Editar', :class => 'with-tip btn' %>
       	<%= link_to icon_tag('icon-pencil'), edit_projeto_path(projeto), :title => 'Editar', :class => 'with-tip btn' %>
       	<%= link_to icon_tag('icon-remove'), projeto, confirm: 'Você tem certeza?', method: :delete, :title => 'Excluir', :class => 'with-tip btn' %>
     	</td>

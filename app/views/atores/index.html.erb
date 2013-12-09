@@ -4,6 +4,7 @@
 	  <tr>
 		  <th>Nome</th>
 		  <th>Projeto</th>
+			<th>Tipo</th>
 		  <th>Ações</th>
 	 	</tr>
   </thead>
@@ -12,6 +13,7 @@
   	<tr>
     	<td><%= link_to ator.nome, ator %></td>
     	<td><%= ator.projeto %></td>
+			<td><%= ator.tipo_ator %></td>
     	<td>
       	<%= link_to icon_tag('icon-pencil'), edit_ator_path(ator), :title => 'Editar', :class => 'btn with-tip' %>
       	<%= link_to icon_tag('icon-remove'), ator, confirm: 'Você tem certeza?', method: :delete, :title => 'Excluir', :class => 'btn with-tip' %>

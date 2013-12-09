@@ -11,13 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131128232458) do
+ActiveRecord::Schema.define(:version => 20131202225018) do
 
   create_table "atores", :force => true do |t|
     t.string   "nome"
     t.integer  "projeto_id"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.integer  "tipo_ator_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
   end
 
   create_table "casos_de_uso", :force => true do |t|
@@ -54,6 +55,15 @@ ActiveRecord::Schema.define(:version => 20131128232458) do
   create_table "projetos", :force => true do |t|
     t.string   "nome"
     t.boolean  "ind_ativo"
+    t.decimal  "fator_tecnico"
+    t.decimal  "fator_ambiental"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  create_table "tipos_ator", :force => true do |t|
+    t.string   "sigla"
+    t.string   "descricao"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

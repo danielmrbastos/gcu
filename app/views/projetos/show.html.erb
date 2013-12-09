@@ -2,6 +2,8 @@
 <%= show_for @projeto do |s| %>
   <%= s.attribute :nome %>
   <%= s.attribute :ind_ativo, :label => "Ativo" %>
+	<%= s.attribute :fator_ambiental %>
+	<%= s.attribute :fator_tecnico %>
 
 <% end %>
 <div class="form-actions">

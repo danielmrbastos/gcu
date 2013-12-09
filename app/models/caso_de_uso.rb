@@ -1,5 +1,5 @@
 class CasoDeUso < ActiveRecord::Base
-  attr_accessible :nome, :projeto_id, :fluxos_attributes, :passos_attributes, :situacao, :precondicao, :poscondicao
+  attr_accessible :nome, :projeto_id, :fluxos_attributes, :passos_attributes, :situacao, :precondicao, :poscondicao, :fator_tecnico, :fator_ambiental
 
 	belongs_to :projeto
 	has_many :fluxos
@@ -35,6 +35,5 @@ class CasoDeUso < ActiveRecord::Base
      state :analise, :human_name => 'Em analise'
      state :aprovado, :human_name => 'Aprovado'
   end
-
 
 end

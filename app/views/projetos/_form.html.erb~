@@ -6,7 +6,7 @@
     <%= f.input :nome %>
     <%= f.input :ind_ativo %>
 		<%= f.input :fator_tecnico, :as => "string" %>
-		<%= f.input :fator_ambiental, :as => "string" %>
+		<%= f.input :fator_ambiental %>
 
 		<div class="form-actions">
 	 		<%= f.button :submit, 'Salvar', :class => 'btn-primary' %>

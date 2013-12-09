@@ -3,6 +3,7 @@
 		<legend><%= title %></legend>
 		<%= error_messages @ator %>
     <%= f.association :projeto %>
+		<%= f.association :tipo_ator %>
     <%= f.input :nome %>
 
 		<div class="form-actions">

@@ -1,6 +1,7 @@
 <h1><%= @ator %></h1>
 <%= show_for @ator do |s| %>
   <%= s.association :projeto %>
+	<%= s.association :tipo_ator %>
   <%= s.attribute :nome %>
 
 <% end %>

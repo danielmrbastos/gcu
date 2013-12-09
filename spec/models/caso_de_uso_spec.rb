@@ -1,3 +1,4 @@
+# encoding: utf-8
 require 'spec_helper'
 
 describe CasoDeUso do
@@ -21,5 +22,6 @@ describe CasoDeUso do
 		@caso_de_uso.aprovar
 		@caso_de_uso.situacao.should == "aprovado"
 	end
+
 
 end

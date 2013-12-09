@@ -10,4 +10,4 @@
 
 TipoAtor.create(:sigla => "simples", :descricao => "Simples")
 TipoAtor.create(:sigla => "medio", :descricao => "Médio")
-TipoAtor.create(:sigla => "complexo", :descricao => "Complexo")
+TipoAtor.create(:sigla => "complexo", :descricao => "Médio")

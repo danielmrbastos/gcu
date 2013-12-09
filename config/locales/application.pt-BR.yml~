@@ -53,7 +53,9 @@
       projeto:
         ind_ativo: Status
         human_situacao_name: Situação
+        fator_tecnico: "Fator técnico (TCF)"
         data_emissao: "Data emissão"
         modelo_contabil: "Modelo contábil"
       caso_de_uso:
         precondicao: "Pré-condições"
+        poscondicao: "Pós-condições"

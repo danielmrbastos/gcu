@@ -2,7 +2,8 @@
   <fieldset>
 		<legend><%= title %></legend>
 		<%= error_messages @ator %>
-    <%= f.association :projeto_id %>
+    <%= f.association :projeto %>
+		<%= f.association :ator %>
     <%= f.input :nome %>
 
 		<div class="form-actions">
